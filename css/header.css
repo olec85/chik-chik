@@ -1,0 +1,28 @@
+.header__container {
+    padding-top: 16px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #BFBDB2;/*полоска снизу*/
+    display: flex;
+    align-items: center;/*центровка по вертикали*/
+    justify-content: space-between;
+}
+
+.header__navigation {
+    flex-grow: 1;/*растягиваем блок*/
+    display: flex;
+    justify-content: flex-end;/*прижимаем к правой стороне*/
+    margin-right: 54px;
+}
+
+@media (max-width: 768px) {
+    .header__navigation {
+        display: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .header__container {
+        padding-top: 12px;
+        padding-bottom: 13px;
+    }
+  }
