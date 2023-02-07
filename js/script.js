@@ -1,5 +1,7 @@
 const API_URL = 'https://scalloped-noiseless-jackal.glitch.me/';
 
+const year = new Date().getFullYear();
+
 /*
 GET /api - получить список услуг
 GET /api?service={n} - получить список барберов
@@ -189,7 +191,7 @@ const renderMonth = (wrapper, data) => {
         <input class="radio__input" type="radio" name="month" value="${month}">
         <span class="radio__label">${new Intl.DateTimeFormat('ru-RU', {
             month: 'long'
-        }).format(new Date(month))}</span>
+        }).format(new Date(year, month))}</span>
         `;
 
         return label;
@@ -206,7 +208,7 @@ const renderDay = (wrapper, data, month) => {
         <input class="radio__input" type="radio" name="day" value="${day}">
         <span class="radio__label">${new Intl.DateTimeFormat('ru-RU', {
             month: 'long', day: 'numeric'
-        }).format(new Date(`${month}/${day}`))}</span>
+        }).format(new Date(year, month, day))}</span>
         `;
 
         return label;
@@ -318,7 +320,7 @@ const initReserve = () => {
         Ждем Вас ${new Intl.DateTimeFormat('ru-RU', {
             month: 'long',
             day: 'numeric',
-        }).format(new Date(`${data.month}/${data.day}`))},
+        }).format(new Date(year, data.month, data.day))},
         время ${data.time}
         `;
 
